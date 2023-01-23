@@ -52,7 +52,7 @@ class MealDetailScreen extends StatelessWidget {
                 ListView.builder(
                   itemCount: selectedMeal.ingredients.length,
                   itemBuilder: (ctx, index) => Card(
-                      color: Theme.of(context).selectedRowColor,
+                      color: Theme.of(context).colorScheme.secondary,
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
                           vertical: 5,
@@ -89,6 +89,11 @@ class MealDetailScreen extends StatelessWidget {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+          child: const Icon(Icons.delete),
+          onPressed: () {
+            Navigator.of(context).pop(mealId);
+          }),
     );
   }
 }
